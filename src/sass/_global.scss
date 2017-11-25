@@ -1,0 +1,28 @@
+html {
+    @include when-xs {
+        font-size: 10px;
+
+    }
+    @include when-sm {
+        font-size: 14px;
+
+    }
+    @include when-md {
+        font-size: 15px;
+
+    }
+    @include when-lg {
+        font-size: 16px;
+
+    }
+}
+body {
+      overflow-x: hidden;
+}
+.no_padding {
+   @include when-xs {
+     margin:  0;
+   }
+   
+
+}

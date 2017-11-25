@@ -1,0 +1,766 @@
+//***** MEDIA *****//
+
+
+@mixin when-xs() { @media (max-width: $screen-xs-max) { @content; } }
+@mixin when-sm() { @media (min-width: $screen-sm-min) { @content; } }
+@mixin when-md() { @media (min-width: $screen-md-min) { @content; } }
+@mixin when-lg() { @media (min-width: $screen-lg-min) { @content; } }
+//General
+$white: white;
+$red: #c03d45;
+$borderRed: #cf4450;
+$grey: #646464;
+$silver: #bfbfbf;
+$blue: #3b2e79;
+$popup: #f1f1f1;
+$cross: #626262;
+// ***** HEADER ***** //
+.max_width {
+  max-width: 1398px;
+}
+// *** LOGOTYPE *** //
+.logotype {
+  position: absolute;
+  @include when-xs {
+    margin-left: 19px;
+    top: rem(36px);
+  }
+  @include when-sm {
+    margin-left: 173px;
+    top: 46px;
+  }
+  @include when-md {
+    margin-left: 173px;
+    top: 46px;
+  }
+  @include when-lg {
+    margin-left: rem(173px);
+    top: 46px;
+  }
+
+}
+// *** VIDEO *** //
+.video {
+  width: 100%;
+  @include when-xs {
+    height: 100%;
+  }
+  @include when-sm {
+    height: inherit;
+  }
+  @include when-md {
+    height: inherit;
+  }
+  @include when-lg {
+    height: inherit;
+  }
+}
+.header_video {
+  display: flex;
+  position: relative;
+  flex-wrap: wrap;
+}
+.header_play {
+  position: absolute;
+  margin-top: rem(247px);
+  z-index: 99999;
+  @include when-xs {
+    margin-left: rem(325px);
+  }
+  @include when-sm {
+    margin-left: rem(120px);
+  }
+  @include when-md {
+    margin-left: rem(188px);
+  }
+  @include when-lg {
+    margin-left: rem(325px);
+  }
+}
+// *** IMG *** //
+.header_img {
+  display: flex;
+}
+
+.header_img_main {
+  z-index: 1;
+    @include when-xs {
+      height: rem(585px);
+      margin: rem(-448px) auto;
+    }
+    @include when-sm {
+      height: rem(326px);
+      margin: rem(-249px) auto;
+    }
+    @include when-md {
+      height: rem(433px);
+      margin: rem(-330px) auto;
+    }
+    @include when-lg {
+      height: rem(585px);
+      margin: rem(-448px) auto;
+    }
+
+}
+// *** TEXT *** //
+.header_text {
+  position: absolute;
+  top: rem(136px);
+  z-index: 9999;
+    @include when-xs {
+      padding-left: 0;
+      text-align: center;
+      padding: 0 30px;
+      width: 100%;
+      top: 16%;
+
+    }
+    @include when-sm {
+      padding-left: 583px;
+      text-align: inherit;
+    }
+    @include when-md {
+      padding-left: rem(619px);
+      text-align: inherit;
+    }
+    @include when-lg {
+      padding-left: 812px;
+      text-align: inherit;
+    }
+  h1 {
+    font-size: rem(45px);
+    color: $white;
+    // @include when-xs {
+    //   font-size: 23px;
+    // }
+  }
+  h2 {
+    font-size: rem(45px);
+    font-weight: lighter;
+    color: $red;
+    // @include when-xs {
+    //   font-size: 23px;
+    // }
+  }
+  h2:after {
+    content: url("src/images/header_icon.png");
+    position: absolute;
+    margin-top: -19px;
+  }
+  p {
+    font-size: rem(24px);
+    color: $white;
+    margin-bottom: 27px;
+  }
+}
+
+
+  .header_text>.video,
+  .header_text_button a:first-child ,
+  .form_button ,
+  .send_box_button {
+    text-decoration: none;
+    font-size: rem(16px);
+    text-align: center;
+    color: $white;
+    background-color: $borderRed;
+    padding: rem(10px);
+    border-radius: 10px;
+    margin-right: 13px!important;
+  }
+  .header_text_button a:last-child {
+    text-decoration: none;
+    font-size: rem(16px);
+    text-align: center;
+    color: $white;
+    background-color: none!important;
+    padding: rem(8px 25px);
+    border-radius: 10px;
+    border: 2px solid white;
+  }
+// ***** MAIN ***** //
+.main {
+  @include when-xs  {
+    margin-top: 0;
+  }
+  @include when-sm  {
+    margin-top: 100px;
+  }
+  @include when-md {
+      margin-top: 100px;
+  }
+  @include when-lg {
+      margin-top: 100px;
+  }
+  h1 {
+    text-align: center;
+    font-size: rem(36px);
+    color: $red;
+  }
+}
+.main_prize {
+  display: flex;
+  @include when-xs {
+    flex-wrap: wrap;
+  }
+  @include when-sm {
+    flex-wrap: inherit;
+  }
+  @include when-md {
+    flex-wrap: inherit;
+  }
+  @include when-lg {
+    flex-wrap: inherit;
+  }
+
+  justify-content: space-between;
+  margin: 0 36px;
+  color: $grey;
+  div {
+    margin-top: 33px;
+    text-align: center;
+    font-size: rem(16px);
+    width: 100%;
+    p {
+      font-size: rem(24px);
+      font-weight: bold;
+    }
+    .main_prize_quantity{
+      font-size: rem(16px);
+    }
+    h4 {
+      font-size: rem(19px);
+
+    }
+  }
+}
+// ***** FORM ***** //
+.form_header {
+  @include when-xs {
+    padding: 0 20px;
+  }
+  @include when-sm {
+    padding: 0 ;
+  }
+  @include when-md {
+    padding: 0 ;
+  }
+  @include when-lg {
+    padding: 0 ;
+  }
+  text-align: center;
+  margin: 84px 0 61px 0;
+  p {
+    font-size: rem(16px);
+    color: $grey;
+  }
+  h3 {
+    color: $red;
+    font-size: rem(36px);
+    font-weight: bold;
+  }
+}
+form {
+  @include when-xs {
+    padding: 0 20px;
+  }
+  @include when-sm {
+    padding: 0 20px;
+  }
+  @include when-md {
+    padding: 0 ;
+  }
+  @include when-lg {
+    padding: 0 ;
+  }
+  z-index: 9;
+  position: relative;
+  ::-webkit-input-placeholder { /* Chrome */
+    color: $silver;
+  }
+  :-ms-input-placeholder { /* IE 10+ */
+    color: $silver;
+  }
+  ::-moz-placeholder { /* Firefox 19+ */
+    color: $silver;
+    opacity: 1;
+  }
+  :-moz-placeholder { /* Firefox 4 - 18 */
+    color: $silver;
+    opacity: 1;
+  }
+label {
+  color: $grey;
+  font-weight: normal;
+  font-size: rem(24px);
+  display: block;
+  padding: 23px 0;
+}
+input {
+  color: black;
+  font-size: rem(16px);
+  border: none;
+  border-bottom: 1px solid $silver;
+  display: block;
+  width: 100%;
+  background-color: transparent;
+}
+input[type=text]:focus {
+  outline: none;
+  border-bottom: 1px solid $borderRed;
+  }
+}
+.form_checkbox {
+  display: inline-flex;
+  input {
+    width: 25px;
+  }
+  span {
+    color: $grey;
+    padding-top: 2px;
+    font-size: rem(16px);
+  }
+}
+.form_button {
+  width: 194px;
+  float: right;
+  margin: 53px 0;
+}
+.form_button:focus {
+  outline: none;
+}
+.form_button_formII {
+  margin: 53px 0 140px;
+}
+// *** FILES *** //
+.form_files {
+  position: relative;
+}
+.form_files>label:after {
+  transform: rotate(-90deg);
+}
+.form_files>label {
+  width: 231px;
+  height: 127px;
+  color: $silver;
+  border: 1px solid $silver;
+  border-radius: 10px;
+  position: relative;
+  padding-top: 99px;
+}
+.form_files>label:hover {
+  color: $grey;
+}
+.form_files>label:before,
+.form_files>label:after {
+  position: absolute;
+  left: 15px;
+  content: ' ';
+  height: 60px;
+  width: 2px;
+  background-color: $silver;
+  margin-left: 97px;
+  top: 20px;
+  }
+  .gallery_img_load {
+    width: 231px;
+    height: 127px;
+    background: url(src/images/gallery_img.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: inline;
+    position: absolute;
+    margin-top: -151px;
+    border-radius: 10px;
+    border: 1px solid $blue;
+    display: none;
+  }
+
+// ***** GALLERY ***** //
+.gallery {
+  padding-bottom: 50px;
+
+  h1 {
+    padding: 0 13px;
+    color: $red;
+    font-weight: normal;
+    font-size: rem(36px);
+    @include when-xs {
+     text-align: center;
+    }
+    @include when-sm {
+      text-align: left;
+    }
+    @include when-md {
+      text-align: left;
+    }
+    @include when-lg {
+      text-align: left;
+    }
+  }
+
+}
+.gallery_img {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+   div {
+     position: relative;
+    //  @include when-xs {
+    //    padding: 0;
+    //  }
+    //  @include when-sm {
+    //    padding: inherit;
+    //  }
+    //  @include when-md {
+    //    padding:inherit;
+    //  }
+    //  @include when-lg {
+    //    padding:inherit;
+    //  }
+     img {
+       @include when-xs {
+        margin: 0 auto;
+       }
+       @include when-sm {
+         width: 100%;
+       }
+       @include when-md {
+         width: 100%;
+       }
+       @include when-lg {
+         width: 100%;
+       }
+     }
+     .gallery_img_footer {
+       @include when-xs {
+         margin-top: -72px;
+       }
+       @include when-sm {
+         margin-top: -49px;
+       }
+       @include when-md {
+         margin-top: -64px;
+       }
+       @include when-lg {
+         margin-top: -80px;
+       }
+
+     }
+   }
+}
+// .gallery {
+//
+//   border-bottom: 1px solid $silver;
+//   @include when-xs {
+//     padding-bottom: 30px;
+//       }
+//   @include when-sm {
+//     padding: 0  20px 40px 20px;
+//
+//   }
+//   @include when-md {
+//     padding-bottom: 50px;
+//
+//   }
+//   @include when-lg {
+//     padding-bottom: 50px;
+//
+//   }
+//   h1 {
+//    color: $red;
+//    font-weight: normal;
+//    font-size: rem(36px);
+//
+//    @include when-xs {
+//      padding: 0 20px;
+//      text-align: center;
+//    }
+//    @include when-sm {
+//      padding: 0 ;
+//      text-align: inherit;
+//    }
+//    @include when-md {
+//      padding: 0 ;
+//      text-align: inherit;
+//    }
+//    @include when-lg {
+//      padding: 0 ;
+//      text-align: inherit;
+//    }
+//    }
+//  }
+//  .gallery_img {
+//    display: flex;
+//    flex-wrap: wrap;
+//    img {
+//          margin: 0 auto;
+//    }
+//    @include when-xs {
+//      justify-content: center;
+//    }
+//    @include when-sm {
+//       justify-content:space-between;
+//    }
+//    @include when-md {
+//      justify-content:space-between;
+//    }
+//    @include when-lg {
+//      justify-content:space-between;
+//    }
+//    div {
+//
+//      @include when-xs {
+//        padding: 20px 40px;
+//      }
+//      @include when-sm {
+//        padding: 0  ;
+//      }
+//      @include when-md {
+//        padding: inherit;
+//      }
+//      @include when-lg {
+//        padding: inherit;
+//      }
+//    }
+//    .gallery_img_footer {
+//      display: block;
+//      @include when-xs {
+//          margin-top: -55px;
+//      }
+//      @include when-sm {
+//          margin-top: -44px;
+//      }
+//      @include when-md {
+//          margin-top: -64px;
+//      }
+//      @include when-lg {
+//          margin-top: -64px;
+//      }
+//  }
+// }
+// ***** FOOTER ***** //
+.border {
+  border-top: 1px solid $silver;
+}
+.footer {
+
+  margin-top: 29px;
+  display: flex;
+  justify-content: space-between;
+  z-index: 9;
+  position: relative;
+  @include when-xs {
+    padding: 0;
+  }
+  @include when-sm {
+    padding: inherit;
+  }
+  @include when-md {
+    padding: inherit;
+  }
+  @include when-lg {
+    padding: inherit;
+  }
+  a {
+    text-decoration: none;
+    color: $grey;
+    font-size: rem(16px);
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+    @include when-xs {
+      padding:  2px ;
+    }
+    @include when-sm {
+      padding:  7px ;
+    }
+    @include when-md {
+      padding: 7px ;
+    }
+    @include when-lg {
+      padding: 7px ;
+    }
+  }
+}
+.footer_social {
+  display: flex;
+  @include when-xs {
+    padding:  0;
+  }
+  @include when-sm {
+    padding:0 17px 0 0;
+  }
+  @include when-md {
+    padding: 17px 0;
+  }
+  @include when-lg {
+    padding: 17px 0;
+
+  }
+  img {
+    width: rem(34px);
+    height: rem(34px);
+  }
+}
+
+.formII_footer_img {
+  z-index: 1;
+  // height: rem(233px);
+  background: url(src/images/formII_footer_img.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+}
+.footer_img {
+  z-index: 1;
+  height: rem(233px);
+  background: url(src/images/footer_img.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.footer_logotype {
+  @include when-xs {
+    height: rem(40px);
+  }
+  @include when-sm {
+    height: rem(57px);
+  }
+  @include when-md {
+    height: rem(57px);
+  }
+  @include when-lg {
+    height: rem(57px);
+  }
+}
+
+// ***** FORM 2STEP ***** //
+.form_2step_logotype {
+  // margin: rem(45px 0 -45px 0);
+  // margin-left: 173px;
+  position: relative;
+  z-index: 9;
+  @include when-xs {
+    margin: rem(45px 0 -45px 17px);
+  }
+  @include when-sm {
+    margin: rem(45px 0 -45px 50px);
+  }
+  @include when-md {
+    margin: rem(45px 0 -45px 65px);
+  }
+  @include when-lg {
+    margin: rem(45px 0 -45px 173px);
+  }
+}
+.form_2step_max_width {
+
+  @include when-xs {
+    width:inherit;
+  }
+  @include when-sm {
+    width:inherit;
+  }
+  @include when-md {
+    width:rem(688px);
+  }
+  @include when-lg {
+    width:rem(688px);
+  }
+}
+.form_2step_footer {
+  margin-top: -50px;
+}
+
+.form_2step_arrow_box {
+  float: left;
+  margin-top: -22px;
+  a {
+    text-decoration: none;
+    color: white;
+    padding: 3px 7px;
+    background-color: $silver;
+    border-radius: 3px;
+    margin-top: 42px;
+    position: absolute;
+    margin-left: -85px;
+    font-size: rem(10px);
+  }
+  }
+.form_2step_arrow_box::before {
+    content: '';
+    border-right: white;
+    border-bottom: white;
+    border-left: 1px solid $grey;
+    border-top: 1px solid $grey;
+    width: 30px;
+    height: 30px;
+    transform: rotate(-45deg);
+    cursor: pointer;
+    margin-right: 26px;
+    position: absolute;
+    margin-left: -55px;
+  }
+// ***** SEND popup ***** //
+.send_box {
+  // height:rem(552px);
+  background-color: $popup;
+  margin: 0 auto;
+  @include when-xs {
+    width:100%;
+  }
+  @include when-sm {
+    width:100%;
+  }
+  @include when-md {
+    width:100%;
+  }
+  @include when-lg {
+    width: 985px;
+  }
+}
+.send_box_img {
+  text-align: center;
+  margin-bottom: -90px;
+  display: flex;
+  justify-content: flex-end;
+  img {
+    margin: 0 auto;
+  }
+}
+.send_box_button {
+  margin-top: 60px;
+  width: 192px;
+  margin-bottom: 50px;
+}
+.cross {
+  position: absolute;
+  // margin-left: 131px;
+  margin-top: 37px;
+  width: 38px;
+  height: 38px;
+  opacity: 0.7;
+}
+.cross:hover {
+  opacity: 1;
+}
+.cross:before, .cross:after {
+  position: absolute;
+  left: -35px;
+  content: ' ';
+  height: 38px;
+  width: 1px;
+  background-color: $cross;
+}
+.cross:before {
+  transform: rotate(45deg);
+}
+.cross:after {
+  transform: rotate(-45deg);
+}
+.send_box_wrong {
+  padding-top: 254px;
+}
